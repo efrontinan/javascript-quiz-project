@@ -19,7 +19,6 @@ class Quiz {
 
     moveToNextQuestion(){
         this.currentQuestionIndex ++
-        return this.questions[this.currentQuestionIndex]
 
     }
 
@@ -43,13 +42,26 @@ class Quiz {
 
     // 5. checkAnswer(answer)
 
+
+
     checkAnswer(answer){
-        this.questions.forEach((eachQuestion) => {
-            console.log (eachQuestion)
-            if(answer === eachQuestion.answer){
-                this.correctAnswers ++
-        }
-        })
+
+        
+      if (answer ===  this.getQuestion().answer) {
+        this.correctAnswers ++
+      }
+
+
+        // console.log(this.questions)
+        
+        // this.questions.forEach((eachQuestion) => {
+        //     console.log (eachQuestion)
+        //     console.log(answer)
+        //     if(answer === eachQuestion.answer){
+        //         this.correctAnswers ++
+        //         console.log (this.correctAnswers)
+        // }
+        // })
     }
 
     // 6. hasEnded()
