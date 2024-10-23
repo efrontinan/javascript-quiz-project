@@ -31,36 +31,30 @@ class Quiz {
     }
 
     filterQuestionsByDifficulty(difficulty) {
-        // console.log('Antes', this.questions)
-        // console.log(difficulty)
-        // const filteredQuestions = this.questions.filter(eachQuestion => {
-        //     return eachQuestion.difficulty === difficulty
-        // })
 
-        // if (difficulty >= 1 && difficulty <= 3) {
-        //     this.questions = filteredQuestions
-        // }
+        if (difficulty > 0 && difficulty < 4 && !isNaN(difficulty)) {
 
-        // console.log('Despues', this.questions)
-
-        //console.log('Antes', this.questions)
-
-        if (difficulty >= 1 && difficulty <= 3) {
-            this.questions = this.questions.filter(eachQuestion => {
+            const filteredQuestions = this.questions.filter(eachQuestion => {
                 return eachQuestion.difficulty === difficulty
             })
+
+            this.questions = filteredQuestions
         }
-
-        //console.log('Despues', this.questions)
-
     }
 
     averageDifficulty() {
 
-        const sumDifficulty = this.questions.reduce((acc, eachQuestions) => {
-            return acc + eachQuestions.difficulty
+        const sumDifficulty = this.questions.reduce((acc, eachQuestion) => {
+
+            // if (eachPresident.leftOffice === null) {
+            //     return acc
+            // }
+
+            return acc + eachQuestion.difficulty
         }, 0)
 
-        return sumDifficulty / this.questions.length
+        const average = sumDifficulty / this.questions.length
+
+        return average
     }
 }
