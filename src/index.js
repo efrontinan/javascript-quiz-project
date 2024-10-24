@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (timer === 0) {
       showResults()
-      clearInterval(timer);
+      clearInterval(intervalTimer);
     }
   }, 1000)
 
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // If the quiz has ended, show the results
     if (quiz.hasEnded()) {
       showResults();
-      clearInterval(timer);
+      clearInterval(intervalTimer);
       return;
     }
 
